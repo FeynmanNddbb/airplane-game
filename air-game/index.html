@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞机大战</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #001f3f, #007BFF);
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #007BFF;
+        }
+        #intro, #gameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            display: none; /* Initially hidden */
+        }
+        #finalMessage {
+            font-size: 36px; /* 放大文字 */
+            color: red; /* 标红 */
+        }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <h1>飞机大战</h1>
+        <p>使用左右箭头键移动飞机</p>
+        <p>按空格键发射子弹</p>
+        <p>击落敌机获得分数</p>
+        <p>点击任意地方开始游戏</p>
+    </div>
+    <div id="gameOver">
+        <h1>游戏结束</h1>
+        <p>得分: <span id="finalScore"></span></p>
+        <p id="finalMessage"></p>
+        <p>点击任意地方重新开始</p>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <audio id="hitSound" src="https://www.soundjay.com/button/sounds/button-3.mp3" preload="auto"></audio>
+    <audio id="bgMusic" src="imag/background-music.mp3" loop autoplay></audio>
+    <script src="script.js"></script>
+</body>
+</html>
