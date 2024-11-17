@@ -134,12 +134,18 @@
                 ctx.lineTo(this.x + this.width, this.y + this.height);
                 ctx.closePath();
                 ctx.fill();
+            
                 // 在飞机上绘制随机汉字
                 ctx.fillStyle = "white"; // 汉字颜色
                 ctx.font = "20px Arial"; // 汉字字体和大小
-                ctx.fillText(this.character, this.x + 15, this.y + 25); // 在飞机中心绘制汉字
+            
+                // 计算汉字的宽度并调整位置以居中
+                const textWidth = ctx.measureText(this.character).width; // 获取汉字宽度
+                const textX = this.x + (this.width - textWidth) / 2; // 计算X坐标
+                const textY = this.y + (this.height / 2) + 10; // 计算Y坐标
+            
+                ctx.fillText(this.character, textX, textY); // 在飞机中心绘制汉字
             }
-
             update() {
                 this.y += 4; // Enemy speed
             }
