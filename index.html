@@ -120,8 +120,12 @@
                 this.width = 60; // 增加宽度
                 this.height = 40; // 增加高度
                 this.color = "orange";
+                this.character = this.getRandomCharacter(); // 随机选择一个汉字
             }
-
+            getRandomCharacter() {
+                const characters = ["飞", "骏", "奔", "源", "毅"];
+                return characters[Math.floor(Math.random() * characters.length)];
+            }
             draw() {
                 ctx.fillStyle = this.color;
                 ctx.beginPath();
@@ -130,6 +134,10 @@
                 ctx.lineTo(this.x + this.width, this.y + this.height);
                 ctx.closePath();
                 ctx.fill();
+                // 在飞机上绘制随机汉字
+                ctx.fillStyle = "white"; // 汉字颜色
+                ctx.font = "20px Arial"; // 汉字字体和大小
+                ctx.fillText(this.character, this.x + 15, this.y + 25); // 在飞机中心绘制汉字
             }
 
             update() {
