@@ -102,8 +102,10 @@ function handleCollisions() {
             ) {
                 bullets.splice(bIndex, 1);
                 enemies.splice(eIndex, 1);
+                // 重置 hitSound 的播放时间并播放
                 const hitSound = document.getElementById("hitSound");
                 hitSound.currentTime = 0; // 重置播放时间
+                hitSound.play(); // 播放音效
                 score++;
             }
         });
