@@ -14,16 +14,16 @@ let gameTime = 30; // 游戏时间设置为30秒
 let gameInterval;
 
 const enemyImages = [
-    "imag/enemy1.png",
-    "imag/enemy2.png",
-    "imag/enemy3.png",
-    "imag/enemy4.png"
+    "imag/zsj.png",
+    "imag/zsj.png",
+    "imag/zsj.png",
+    "imag/zsj.png"
 ];
 
 class Player {
     constructor() {
         this.image = new Image();
-        this.image.src = "imag/player.png"; // 自定义飞机图片路径
+        this.image.src = "imag/ld.png"; // 自定义飞机图片路径
         this.x = canvas.width / 2 - 30;
         this.y = canvas.height - 100;
         this.width = 60;
