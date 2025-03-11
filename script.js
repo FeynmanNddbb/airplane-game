@@ -102,7 +102,8 @@ function handleCollisions() {
             ) {
                 bullets.splice(bIndex, 1);
                 enemies.splice(eIndex, 1);
-                document.getElementById("hitSound").play();
+                const hitSound = document.getElementById("hitSound");
+                hitSound.currentTime = 0; // 重置播放时间
                 score++;
             }
         });
@@ -177,6 +178,11 @@ document.addEventListener("keydown", (event) => {
 
 document.addEventListener("keyup", (event) => {
     keys[event.key] = false;
+});
+
+document.body.addEventListener("click", function () {
+    const bgMusic = document.getElementById("bgMusic");
+    bgMusic.play();
 });
 
 function gameLoop() {
